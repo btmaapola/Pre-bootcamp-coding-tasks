@@ -48,9 +48,9 @@ print(function1(c,d))
 #Task 5 
 
 #e, f, g = input("Enter three sides of a triangle: ").split()
-e = 7
-f = 9
-g = 7
+e = 18
+f = 12
+g = 20
 e = float(e)
 f = float(f)
 g = float(g)
@@ -58,7 +58,6 @@ g = float(g)
 def AreaFunction(n,l,u): 
     s = 1/2 *(e+f+g)                            #semiperimeter of triangle 
     Area = (s*(s-e)*(s-f)*(s-g)) ** (1/2)
-    #Area = round(Area, 0)
     print(Area)
 
 AreaFunction(e,f,g)
