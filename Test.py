@@ -38,7 +38,7 @@ d = float(d)
 
 def function1(n,l):
     set1 = set(str(c+d))
-    if n == 3 or l == 3 or "3" in set1 : 
+    if n == 3 or l == 3 and "3" in set1 : 
         return True
     else: 
         return False
