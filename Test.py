@@ -175,7 +175,7 @@ for letters in CountryName:
         setA.append(letters)
 
 
-print("The vowels the country name entered are: " + str(setA))
+print("The vowels of the country name entered are: " + str(setA))
 
 #Task 11
 
