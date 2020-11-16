@@ -17,175 +17,160 @@ y = (o+o)*p
 z = x 
 a =  y/p
 b =  x/p
-print(x,y,z,a,b)
 
 #Task 3 
-a, b = input("Enter a two values: ").split() 
+a, b = input("Enter a two values: ").split()
 a = float(a)
 b = float(b)
-def function(n,l):
+
+def input_or_sum_of_sixtyfive(n,l):
     if n+l == 65 or n == 65 or l == 65 :
         return True
     else:
         return False
 
-print(function(a,b))
+print(input_or_sum_of_sixtyfive(a,b))
 
 #Task 4 
-c, d = input("Enter two values: ").split() 
+c, d = input("Enter two values: ").split()
 c = float(c)
 d = float(d)
 
-def function1(n,l):
-    set1 = set(str(c+d))
-    if n == 3 or l == 3 and "3" in set1 : 
+def input_of_and_sum_with_three(n,l):
+    set1 = set(str(n+l))
+    if (n == 3 or l == 3) and ("3" in set1): 
         return True
     else: 
         return False
 
-print(function1(c,d))
+print(input_of_and_sum_with_three(c,d))
 
 #Task 5 
 
-#e, f, g = input("Enter three sides of a triangle: ").split()
-e = 18
-f = 12
-g = 20
-e = float(e)
-f = float(f)
-g = float(g)
+e = int(18)
+f = int(12)
+g = int(20)
 
-def AreaFunction(n,l,u): 
+def area_of_triangle(n,l,u): 
     s = 1/2 *(e+f+g)                            #semiperimeter of triangle 
     Area = (s*(s-e)*(s-f)*(s-g)) ** (1/2)
     print(Area)
 
-AreaFunction(e,f,g)
+area_of_triangle(e,f,g)
 
 #Task 6
-h, i, j = input("Enter three numbers: ").split()
+h, i, j = input("Enter three numbers to find the maximum number: ").split()
 h = float(h)
 i = float(i)
 j = float(j)
 
-count = 0
-ind = 0
-set01 = []
-
-def MaxNumberFunction(num1,num2,num3, counter, index, set1):
+def max_number_function(num1,num2,num3):
+    counter = 0 
+    index = 0 
+    list_1 = []
     while counter < float("inf") : 
         if counter == num1: 
-            set1.insert(index, num1)
+            list_1.insert(index, num1)
             index += 1 
         if counter == num2: 
-            set1.insert(index, num2)
+            list_1.insert(index, num2)
             index += 1 
         if counter == num3: 
-            set1.insert(index, num3)
+            list_1.insert(index, num3)
             index += 1 
         counter += 1 
-        if len(set1) == 3:
-            MaxNo = set1[2]
+        if len(list_1) == 3:
+            MaxNo = list_1[2]
             print (str(MaxNo) + " is a maximum number")
             break
 
-MaxNumberFunction(h,i,j, count, ind, set01)
+max_number_function(h,i,j)
 
 #Task 7 
 
-#TempC = input("Please enter temperature value in Celsius: ")
-TempC = 0 
-TempC = float(TempC)
+temp_celsius = int(0) 
 
-def TempFunction(TemperatureCelsius): 
-    TempF = (TemperatureCelsius * (9/5)) + 32
-    print( str(TempF) + " Fahrenheit" )
-    return TempF
+def celsius_to_fahrenheit(temperature_celsius): 
+    temp_fahrenheit_output = (temperature_celsius * (9/5)) + 32
+    print( str(temp_fahrenheit_output) + " Fahrenheit" )
+    return temp_fahrenheit_output
 
-TempFunction(TempC)
+celsius_to_fahrenheit(temp_celsius)
 
-TempF = 134
-TempF = float(TempF)
+temp_fahrenheit_input = int(134)
 
-def TempFunction1(TemperatureFahrenheit): 
-    TempC = (TemperatureFahrenheit - 32)* (5/9)
-    print( str(TempC) + " Celsius" )
-    return TempC
+def fahrenheit_to_celsius(temperature_fahrenheit): 
+    temperature_celsius_output = (temperature_fahrenheit - 32)* (5/9)
+    print( str(temperature_celsius_output) + " Celsius" )
+    return temperature_celsius_output
 
-TempFunction1(TempF)
+fahrenheit_to_celsius(temp_fahrenheit_input)
 
 #Task 8
-q = float(input("Please enter any number representing time: "))
-q = round(q)
+q = int(input("Please enter any number representing time: "))
 
-def TimeFunction(InputTime):
-    hours = InputTime // 60 
-    minutes = InputTime % 60 
-    print ( "Converted time is " + str(hours) + " hours and " + str(minutes) + "minutes")
+def time_converting_function(input_time):
+    hours = input_time // 60 
+    minutes = input_time % 60 
+    print ( "Converted time is " + str(hours) + " hours and " + str(minutes) + " minutes")
 
-TimeFunction(q)
+time_converting_function(q)
 
 #Task 9 
-value = 1000 
-num1 = 3 
-num2 = 5 
-multiNo = (1000//5) #number of multiples of 5 in 1000 
-multi2No = (1000//3) +1 #number of multiples of 3 in 1000 + 1 extra
 
-count = 1
-count2 = 1
-ind = 0
-ind2 = 0
-ind3 = 0
-set01 = [] 
-set02 = []
-set03 = []
-import math
+no_of_multiples_5 = (1000//5) - 1  #number of multiples of 5 in 995
+no_of_multiples_3 = (1000//3)   #number of multiples of 3 in 1000
 
-def MultiplesFunction(multiple1,multiple2,multiple1No,multiple2No,counter, counter2, index, index2, set1,set2):
-    while counter2 < multiple1No and counter < multiple2No: 
-        multiples2 = counter2*multiple2 
-        multiples1 = counter*multiple1 
-        set1.insert(index, multiples1)
-        set2.insert(index2, multiples2)
-        index2 += 1 
-        counter2 += 1
-        index += 1 
-        counter += 1
-    
-    set4 = set1 + set2
-    set4.sort()
-    
-    #removing duplicate numbers
-    set4 = list(set(set4)) 
-    
-    print (sum(set4))
+def multiples_function(input1,input2):
+    list_C = []
+    list_B = []
+    i =0
+    j = 0
+    index = 0
+    index2 = 0
+    while i <= input1 and j <= input2 : 
+        multiples_of_5 = 5*i 
+        multiples_of_3 = 3*j
+        list_C.insert(index, multiples_of_5)
+        list_B.insert(index2,multiples_of_3)
+        i += 1 
+        j += 1 
+        index +=1 
+        index2 +=1
+    new_list = list_C + list_B
+    new_list.sort()
+    new_list = list(set(new_list)) #removing duplicate numbers
+    sum_of_multiples = sum(new_list)
+    print ("The sum of multiples of 3 and 5 below 1000 is: " + str(sum_of_multiples))
 
- 
-MultiplesFunction(num1,num2,multiNo,multi2No,count,count2,ind,ind2,set01,set02)
+multiples_function(no_of_multiples_5, no_of_multiples_3)
 
 
 #Task 10 
 
 CountryName = str("Eutopia")
-print (CountryName)
-setA = []
-for letters in CountryName:
-    if letters in 'AaEeIiOoUu':
-        setA.append(letters)
 
+def vowels_in_string(String):
+    list_A = []
+    for letters in String:
+        if letters in 'AaEeIiOoUu':
+            list_A.append(letters)
+    
+    print("The vowels in the word " + CountryName + " are: " + str(list_A))
 
-print("The vowels of the country name entered are: " + str(setA))
+vowels_in_string(CountryName)
 
 #Task 11
 
-Word = input('Enter any word: ' )
-Word2 = input('Enter any word2: ' )
+Word = input("Enter any word: ")
+Word2 = input("Enter another word to compare with first word: " )
 
-setB = []
-for letters in Word:
-    if letters in Word2:
-        setB.append(letters)
+def common_characters_in_words(String1,String2):
+    list_B = []
+    for letters in String1:
+        if letters in String2:
+            list_B.append(letters)
+            
+    print("Common letters in both words are " + str(list_B))
 
-#print(setB)
-print("Common letters in both words are " + str(setB))
+common_characters_in_words(Word,Word2)
