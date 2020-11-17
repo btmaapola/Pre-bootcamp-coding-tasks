@@ -19,7 +19,7 @@ a =  y/p
 b =  x/p
 
 #Task 3 
-a, b = input("Enter a two values: ").split()
+a, b = input("Enter a two numbers to determine if the input or sum is 65: ").split()
 a = float(a)
 b = float(b)
 
@@ -32,7 +32,7 @@ def input_or_sum_of_sixtyfive(n,l):
 print(input_or_sum_of_sixtyfive(a,b))
 
 #Task 4 
-c, d = input("Enter two values: ").split()
+c, d = input("Enter two numbers to determine if the input is and sum has 3: ").split()
 c = float(c)
 d = float(d)
 
@@ -54,37 +54,41 @@ g = int(20)
 def area_of_triangle(n,l,u): 
     s = 1/2 *(e+f+g)                            #semiperimeter of triangle 
     Area = (s*(s-e)*(s-f)*(s-g)) ** (1/2)
-    print(Area)
+    Area = round(Area)
+    print("The area of the triangle is " + str(Area))
 
 area_of_triangle(e,f,g)
 
 #Task 6
-h, i, j = input("Enter three numbers to find the maximum number: ").split()
-h = float(h)
-i = float(i)
-j = float(j)
+def length_function(string):
+    j = 0
+    n = 0
+    for n in string : 
+        j +=1 
+        n +=1
+    return j 
 
-def max_number_function(num1,num2,num3):
-    counter = 0 
-    index = 0 
-    list_1 = []
-    while counter < float("inf") : 
-        if counter == num1: 
-            list_1.insert(index, num1)
-            index += 1 
-        if counter == num2: 
-            list_1.insert(index, num2)
-            index += 1 
-        if counter == num3: 
-            list_1.insert(index, num3)
-            index += 1 
-        counter += 1 
-        if len(list_1) == 3:
-            MaxNo = list_1[2]
-            print (str(MaxNo) + " is a maximum number")
+x = list(map(int, input("Enter any multiple numbers to find the maximum number: ").split()))
+print(x)
+
+def max_number_function(inputs):
+    i = 0
+    list1 = []
+    index = 0
+    length_x = length_function(x)
+    while i < float("inf"):
+        if i in inputs:
+            list1.insert(index, i)
+            index += 1
+        i += 1
+        J = length_function(list1)
+        if J == length_x : 
+            k = J -1
+            maximum_number = list1[k]
+            print("The maximum number is " + str(maximum_number))
             break
 
-max_number_function(h,i,j)
+max_number_function(x)
 
 #Task 7 
 
@@ -92,7 +96,7 @@ temp_celsius = int(0)
 
 def celsius_to_fahrenheit(temperature_celsius): 
     temp_fahrenheit_output = (temperature_celsius * (9/5)) + 32
-    print( str(temp_fahrenheit_output) + " Fahrenheit" )
+    print("The input celsius temp is equal to " + str(temp_fahrenheit_output) + " Fahrenheit" )
     return temp_fahrenheit_output
 
 celsius_to_fahrenheit(temp_celsius)
@@ -101,7 +105,8 @@ temp_fahrenheit_input = int(134)
 
 def fahrenheit_to_celsius(temperature_fahrenheit): 
     temperature_celsius_output = (temperature_fahrenheit - 32)* (5/9)
-    print( str(temperature_celsius_output) + " Celsius" )
+    temperature_celsius_output = round(temperature_celsius_output)
+    print("The input fahrenheit temp is equal to " + str(temperature_celsius_output) + " Celsius" )
     return temperature_celsius_output
 
 fahrenheit_to_celsius(temp_fahrenheit_input)
