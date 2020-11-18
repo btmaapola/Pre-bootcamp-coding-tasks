@@ -47,13 +47,13 @@ print(input_of_and_sum_with_three(c,d))
 
 #Task 5 
 
-e = int(18)
-f = int(12)
-g = int(20)
+e = 18
+f = 12
+g = 20
 
 def area_of_triangle(n,l,u): 
-    s = 1/2 *(e+f+g)                            #semiperimeter of triangle 
-    Area = (s*(s-e)*(s-f)*(s-g)) ** (1/2)
+    s = 1/2 *(n+l+u)                            #semiperimeter of triangle 
+    Area = (s*(s-n)*(s-l)*(s-u)) ** (1/2)
     Area = round(Area)
     print("The area of the triangle is " + str(Area))
 
@@ -68,27 +68,27 @@ def length_function(string):
         n +=1
     return j 
 
-x = list(map(int, input("Enter any multiple numbers to find the maximum number: ").split()))
+
+x = list(map(int, input("Enter any multiple whole numbers to find the maximum number: ").split()))
 print(x)
+p = list(set(x))
 
 def max_number_function(inputs):
     i = 0
     list1 = []
-    index = 0
-    length_x = length_function(x)
+    length_inputs = length_function(inputs)
     while i < float("inf"):
         if i in inputs:
-            list1.insert(index, i)
-            index += 1
+            list1.append(i)
         i += 1
         J = length_function(list1)
-        if J == length_x : 
+        if J == length_inputs : 
             k = J -1
             maximum_number = list1[k]
             print("The maximum number is " + str(maximum_number))
             break
 
-max_number_function(x)
+max_number_function(p)
 
 #Task 7 
 
@@ -123,33 +123,19 @@ time_converting_function(q)
 
 #Task 9 
 
-no_of_multiples_5 = (1000//5) - 1  #number of multiples of 5 in 995
-no_of_multiples_3 = (1000//3)   #number of multiples of 3 in 1000
+no_of_multiples_5 = 1000//5 
+no_of_multiples_3 = 1000//3 + 1 
 
-def multiples_function(input1,input2):
-    list_C = []
-    list_B = []
-    i =0
-    j = 0
-    index = 0
-    index2 = 0
-    while i <= input1 and j <= input2 : 
-        multiples_of_5 = 5*i 
-        multiples_of_3 = 3*j
-        list_C.insert(index, multiples_of_5)
-        list_B.insert(index2,multiples_of_3)
-        i += 1 
-        j += 1 
-        index +=1 
-        index2 +=1
-    new_list = list_C + list_B
-    new_list.sort()
-    new_list = list(set(new_list)) #removing duplicate numbers
-    sum_of_multiples = sum(new_list)
-    print ("The sum of multiples of 3 and 5 below 1000 is: " + str(sum_of_multiples))
+def multiples_function(count1, count2):
+    multiples_of_5 = [i*5 for i in range(count1)]
+    multiples_of_3 = [j*3 for j in range(count2)]
+    k1 = multiples_of_5 + multiples_of_3
+    k1.sort()
+    k1 = list(set(k1))
+    sum_of_multiples = sum(k1)
+    print(sum_of_multiples)
 
-multiples_function(no_of_multiples_5, no_of_multiples_3)
-
+multiples_function(no_of_multiples_5,no_of_multiples_3)
 
 #Task 10 
 
