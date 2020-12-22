@@ -52,15 +52,15 @@ f = 12
 g = 20
 
 def area_of_triangle(n,l,u): 
-    s = 1/2 *(n+l+u)                            #semiperimeter of triangle 
-    Area = (s*(s-n)*(s-l)*(s-u)) ** (1/2)
-    Area = round(Area)
-    print("The area of the triangle is " + str(Area))
+    semiperimeter_of_triangle = 1/2 *(n+l+u)                   
+    area = (semiperimeter_of_triangle*(semiperimeter_of_triangle-n)*(semiperimeter_of_triangle-l)*(semiperimeter_of_triangle-u)) ** (1/2)
+    area = round(area)
+    return area
 
 area_of_triangle(e,f,g)
 
 #Task 6
-def length_function(string):
+def length_of_string(string):
     j = 0
     n = 0
     for n in string : 
@@ -70,18 +70,17 @@ def length_function(string):
 
 
 x = list(map(int, input("Enter any multiple whole numbers to find the maximum number: ").split()))
-print(x)
 p = list(set(x))
 
 def max_number_function(inputs):
     i = 0
     list1 = []
-    length_inputs = length_function(inputs)
+    length_inputs = length_of_string(inputs)
     while i < float("inf"):
         if i in inputs:
             list1.append(i)
         i += 1
-        J = length_function(list1)
+        J = length_of_string(list1)
         if J == length_inputs : 
             k = J -1
             maximum_number = list1[k]
@@ -117,7 +116,16 @@ q = int(input("Please enter any number representing time: "))
 def time_converting_function(input_time):
     hours = input_time // 60 
     minutes = input_time % 60 
-    print ( "Converted time is " + str(hours) + " hours and " + str(minutes) + " minutes")
+    if (minutes > 1 or minutes < 1) and ( hours>1 or hours <1 ):
+        print(str(hours)+" hours, "+ str(minutes)+" minutes")
+    else: 
+        if hours == 1 and minutes == 1 :
+            print(str(hours)+" hour, "+ str(minutes)+" minute")
+        elif (hours > 1 or hours <1 ) and minutes == 1: 
+            print(str(hours)+" hours, "+ str(minutes)+" minute")
+        elif (minutes > 1 or minutes <1 ) and hours == 1 : 
+            print(str(hours)+" hour, "+ str(minutes)+" minutes")
+    
 
 time_converting_function(q)
 
@@ -139,29 +147,29 @@ multiples_function(no_of_multiples_5,no_of_multiples_3)
 
 #Task 10 
 
-CountryName = str("Eutopia")
+country_name = "Eutopia"
 
 def vowels_in_string(String):
-    list_A = []
+    list_a = []
     for letters in String:
         if letters in 'AaEeIiOoUu':
-            list_A.append(letters)
+            list_a.append(letters)
     
-    print("The vowels in the word " + CountryName + " are: " + str(list_A))
+    print("The vowels in the word " + country_name + " are: " + str(list_a))
 
-vowels_in_string(CountryName)
+vowels_in_string(country_name)
 
 #Task 11
 
-Word = input("Enter any word: ")
-Word2 = input("Enter another word to compare with first word: " )
+word = input("Enter any word: ")
+word2 = input("Enter another word to compare with first word: " )
 
 def common_characters_in_words(String1,String2):
-    list_B = []
+    list_b = []
     for letters in String1:
         if letters in String2:
-            list_B.append(letters)
+            list_b.append(letters)
             
-    print("Common letters in both words are " + str(list_B))
+    print("Common letters: " + str(list_b)[1:-1])
 
-common_characters_in_words(Word,Word2)
+common_characters_in_words(word,word2)
